@@ -1,4 +1,6 @@
 language: go
+env:
+    CURRENT_TAG=`git describe| cut -c 2- | awk -F'-' '{print $1}'`
 go:
   - 1.5
 cache:
@@ -9,5 +11,5 @@ cache:
 install: 
   - mkdir -p "$TRAVIS_BUILD_DIR/gosrc"
   - go get github.com/laher/goxc
-script: goxc -q -bc "windows,amd64 linux,amd64" -d "$TRAVIS_BUILD_DIR/output/" -pv `git describe | cut -c 2-` clean go-vet go-test xc archive rmbin
-after_script: ls -lsa "$TRAVIS_BUILD_DIR/output/`git describe | cut -c 2-`/"
+script: goxc -d "$TRAVIS_BUILD_DIR/output/" -pv $CURRENT_TAG
+after_script: ls -lsa "$TRAVIS_BUILD_DIR/output/$CURRENT_TAG/*/"

@@ -1,0 +1,13 @@
+{
+	"Tasks": [
+		"clean",
+		"go-vet",
+		"go-test",
+		"xc",
+		"archive",
+		"rmbin"
+	],
+	"BuildConstraints": "windows,amd64 linux,amd64",
+	"Verbosity": "q",
+	"ConfigVersion": "0.9"
+}
