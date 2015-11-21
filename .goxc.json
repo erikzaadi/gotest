@@ -1,4 +1,5 @@
 {
+	"ArtifactsDest": "./output/",
 	"Tasks": [
 		"clean",
 		"go-vet",
