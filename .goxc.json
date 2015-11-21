@@ -9,6 +9,6 @@
 		"rmbin"
 	],
 	"BuildConstraints": "windows,amd64 linux,amd64",
-	"Verbosity": "q",
+	"Verbosity": "",
 	"ConfigVersion": "0.9"
 }
