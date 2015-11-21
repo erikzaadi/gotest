@@ -1,0 +1,6 @@
+language: go
+go:
+  - 1.5
+install:
+  - go get github.com/laher/goxc
+script: goxc -bc "windows,amd64 linux,amd64"
