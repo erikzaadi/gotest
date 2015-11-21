@@ -11,5 +11,5 @@ cache:
 install: 
   - mkdir -p "$TRAVIS_BUILD_DIR/gosrc"
   - go get github.com/laher/goxc
-script: goxc -c="$TRAVIS_BUILD_DIR/.goxc.json" -d "$TRAVIS_BUILD_DIR/output/" -pv `git describe| cut -c 2- | awk -F'-' '{print $1}'` 
-after_script: ls -lsa "$TRAVIS_BUILD_DIR/output/$CURRENT_TAG/*/"
+script: goxc -d "$TRAVIS_BUILD_DIR/output/" -pv "$CURRENT_TAG" 
+after_script: ls -lsa "$TRAVIS_BUILD_DIR/output/$CURRENT_TAG/*"
