@@ -3,4 +3,5 @@ go:
   - 1.5
 install:
   - go get github.com/laher/goxc
-script: goxc -bc "windows,amd64 linux,amd64"
+script: goxc -q -bc "windows,amd64 linux,amd64" -d "$TRAVIS_BUILD_DIR/output/" -pv `git describe | cut -c 2-`
+after_success: ls -lsa "$TRAVIS_BUILD_DIR/output/"
