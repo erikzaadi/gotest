@@ -10,4 +10,4 @@ install:
   - mkdir -p "$TRAVIS_BUILD_DIR/gosrc"
   - go get github.com/laher/goxc
 script: goxc -q -bc "windows,amd64 linux,amd64" -d "$TRAVIS_BUILD_DIR/output/" -pv `git describe | cut -c 2-` -tasks-=deb -tasks-=deb-dev -tasks-=rmbin -tasks-=downloads-page
-after_script: ls -lsa "$TRAVIS_BUILD_DIR/output/*/"
+after_script: ls -lsa "$TRAVIS_BUILD_DIR/output/`git describe | cut -c 2-`/"
