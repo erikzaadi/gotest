@@ -1,6 +1,6 @@
 language: go
 env:
-    CURRENT_TAG=`git describe| cut -c 2- | awk -F'-' '{print $1}'`
+    CURRENT_TAG="$(git describe | cut -c 2- | awk -F '-' '{print $1}')"
 go:
   - 1.5
 cache:
